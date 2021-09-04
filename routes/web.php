@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\BrandController;
 use App\Models\Product;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
@@ -27,3 +28,19 @@ Route::get('/product/delete/{id}',[ProductController::class,'delete'])->name('pr
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+//Rutas Brands
+
+// Rutas Listar
+Route::get('/brands',[BrandController::class,'show_source']);
+
+
+// Rutas Formulario
+ Route::get('/brand/formb/{id?}',[BrandController::class,'form'])->name('brand.formb');
+
+// Ruta Guardar
+Route::post('/brand/save',[BrandController::class,'save'])->name('brand.save');
+
+//Ruta Eliminar Brand
+Route::get('/brand/delete/{id}',[BrandController::class,'delete'])->name('brand.delete');

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use App\Models\Product;
 use Illuminate\Http\Request;
+
+use function Symfony\Component\String\b;
 
 class ProductController extends Controller
 {
@@ -24,11 +27,14 @@ class ProductController extends Controller
     function form($id = null)
     {
         $product = new Product();
-
+        $brands = Brand::all();
         if ($id != null) {
             $product = Product::findOrFail($id);
         }
-        return view('product/form', ['product' => $product]);
+        return view('product/form', ['product' => $product,
+        'brands' => $brands
+    ]);
+
     }
 
     function save(Request $request)
@@ -51,7 +57,7 @@ class ProductController extends Controller
         $product->cost = $request->cost;
         $product->price = $request->price;
         $product->quantity = $request->quantity;
-        $product->brand = $request->brand;
+        $product->brand_id = $request->brand;
 
         $product->save();
 

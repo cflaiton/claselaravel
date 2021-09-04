@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use League\CommonMark\Reference\Reference;
 
 class CreateProductsTable extends Migration
 {
@@ -19,8 +20,10 @@ class CreateProductsTable extends Migration
             $table->double('cost',10,2);
             $table->double('price',10,2);
             $table->integer('quantity');
-            $table->string('brand',50);
+            $table->foreignId('brand_id');
             $table->timestamps();
+
+            $table->foreign('brand_id')->references('id')->on('brands');
         });
     }
 

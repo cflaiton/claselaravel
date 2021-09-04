@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\CategoryController;
 use App\Models\Product;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
@@ -44,3 +45,20 @@ Route::post('/brand/save',[BrandController::class,'save'])->name('brand.save');
 
 //Ruta Eliminar Brand
 Route::get('/brand/delete/{id}',[BrandController::class,'delete'])->name('brand.delete');
+
+
+
+//Rutas Category
+
+// Rutas Listar
+ Route::get('/categories',[CategoryController::class,'show_source']);
+
+
+// // Rutas Formulario
+  Route::get('/category/formc/{id?}',[CategoryController::class,'form'])->name('category.formc');
+
+// // Ruta Guardar
+ Route::post('/category/save',[CategoryController::class,'save'])->name('category.save');
+
+// //Ruta Eliminar Brand
+ Route::get('/category/delete/{id}',[CategoryController::class,'delete'])->name('categories.delete');

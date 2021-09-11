@@ -1,4 +1,4 @@
-@extends('layaut')
+@extends('layout')
 @section('title', $product->id ? 'Actualizar Producto' : 'Nuevo Producto')
 @section('header', $product->id ? 'Actualizar Producto' : 'Nuevo Producto')
 @section('content')

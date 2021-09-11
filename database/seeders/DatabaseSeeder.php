@@ -20,8 +20,9 @@ class DatabaseSeeder extends Seeder
             BrandSeeder::class,
             CategoriSeeder::class,
             ProductSeeder::class,
-            UserSeeder::class
-
+            UserSeeder::class,
+            InvoiceSeeder::class,
+            InvoiceDetailSeeder::class,
         ]);
 
     }

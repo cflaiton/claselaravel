@@ -1,6 +1,6 @@
 <h1>Bienvenido a formulario de marca</h1>
 
-@extends('layaut')
+@extends('layout')
 @section('title',$category->id ? 'Actualizar Producto' : 'Nuevo Producto')
 @section('header',$category->id ? 'Actualizar Producto' :'Nuevo Producto')
 @section('content')

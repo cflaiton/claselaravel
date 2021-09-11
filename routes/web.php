@@ -11,54 +11,25 @@ Route::get('/', function () {
     return view('welcome');
 })->Middleware('auth');
 
-// Route::get('/usuario', function () {
-//     return ("Hola mundo");
-// });
-
-// Route::get('/usuario/{nombre_usuario?}',
-// [PersonaController::class,'mostrar'])->where('nombre_usuario', '[A-Za-z]+');
-
 Route::get('/products',[ProductController::class,'show_source']);
 
 //Route::get('/product/form',[ProductController::class,'form'])->name('product.form');
 Route::get('/product/form/{id?}',[ProductController::class,'form'])->name('product.form');
-
 Route::post('/product/save',[ProductController::class,'save'])->name('product.save');
-
 Route::get('/product/delete/{id}',[ProductController::class,'delete'])->name('product.delete');
-//Auth::routes();
+
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
 //Rutas Brands
-
-// Rutas Listar
 Route::get('/brands',[BrandController::class,'show_source']);
-
-
-// Rutas Formulario
- Route::get('/brand/formb/{id?}',[BrandController::class,'form'])->name('brand.formb');
-
-// Ruta Guardar
+Route::get('/brand/formb/{id?}',[BrandController::class,'form'])->name('brand.formb');
 Route::post('/brand/save',[BrandController::class,'save'])->name('brand.save');
-
-//Ruta Eliminar Brand
 Route::get('/brand/delete/{id}',[BrandController::class,'delete'])->name('brand.delete');
 
-
-
 //Rutas Category
-
-// Rutas Listar
- Route::get('/categories',[CategoryController::class,'show_source']);
-
-
-// // Rutas Formulario
-  Route::get('/category/formc/{id?}',[CategoryController::class,'form'])->name('category.formc');
-
-// // Ruta Guardar
- Route::post('/category/save',[CategoryController::class,'save'])->name('category.save');
-
-// //Ruta Eliminar Brand
- Route::get('/category/delete/{id}',[CategoryController::class,'delete'])->name('categories.delete');
+Route::get('/categories',[CategoryController::class,'show_source']);
+Route::get('/category/formc/{id?}',[CategoryController::class,'form'])->name('category.formc');
+Route::post('/category/save',[CategoryController::class,'save'])->name('category.save');
+Route::get('/category/delete/{id}',[CategoryController::class,'delete'])->name('categories.delete');

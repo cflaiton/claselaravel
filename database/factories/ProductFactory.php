@@ -28,7 +28,8 @@ class ProductFactory extends Factory
                 'cost' => random_int(100,10000),
                 'price' => random_int(1000,20000),
                 'quantity' => random_int(1,50),
-                'brand_id' => random_int(1,10)
+                'brand_id' => random_int(1,10),
+                'categori_id' => random_int(1,5)
 
         ];
     }

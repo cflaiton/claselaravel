@@ -21,6 +21,7 @@
             <th>Price</th>
             <th>Quantity</th>
             <th>Brand</th>
+            <th>Category</th>
             <th></th>
         </tr>
     </thead>
@@ -32,6 +33,10 @@
             <td>{{$product->quantity}}</td>
             <td>{{$product->name}}</td>
             <td>{{$product->brand->nombre}}</td>
+            <td>{{$product->category->nombre}}</td>
+
+
+
             <td>
                 <a href="{{ route('product.form',['id'=> $product->id]) }}" class="btn btn-warning">Editar</a>
                 <a href="{{ route('product.delete',['id'=> $product->id]) }}" class="btn btn-danger">Borrar</a>

@@ -26,7 +26,7 @@ Route::get('/product/form/{id?}',[ProductController::class,'form'])->name('produ
 Route::post('/product/save',[ProductController::class,'save'])->name('product.save');
 
 Route::get('/product/delete/{id}',[ProductController::class,'delete'])->name('product.delete');
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

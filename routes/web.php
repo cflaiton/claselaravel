@@ -44,3 +44,9 @@ Route::post('/brand/save',[BrandController::class,'save'])->name('brand.save');
 
 //Ruta Eliminar Brand
 Route::get('/brand/delete/{id}',[BrandController::class,'delete'])->name('brand.delete');
+
+
+use App\Http\Controllers\InvoiceController;
+Route::get('/invoices',[InvoiceController::class , 'show']);
+Route::get('/invoice/form',[InvoiceController::class,'form'])->name('invoice.form');
+
